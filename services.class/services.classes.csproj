@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="domain.entities">
+      <HintPath>..\domain.entities\bin\Debug\netcoreapp2.2\domain.entities.dll</HintPath>
+    </Reference>
+    <Reference Include="infraestructure.interfaces">
+      <HintPath>..\infraestructure.interfaces\bin\Debug\netcoreapp2.2\infraestructure.interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="services.interfaces">
+      <HintPath>..\services.interfaces\bin\Debug\netcoreapp2.2\services.interfaces.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

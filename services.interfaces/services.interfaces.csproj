@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="domain.entities">
+      <HintPath>..\domain.entities\bin\Debug\netcoreapp2.2\domain.entities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\domain.entities\domain.entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="infraestructure.data">
+      <HintPath>..\infraestructure.data\bin\Debug\netcoreapp2.2\infraestructure.data.dll</HintPath>
+    </Reference>
+    <Reference Include="infraestructure.interfaces">
+      <HintPath>..\infraestructure.data\bin\Debug\netcoreapp2.2\infraestructure.interfaces.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

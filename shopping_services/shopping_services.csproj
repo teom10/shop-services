@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="shopping_entities">
+      <HintPath>..\shopping_entities\bin\Debug\netcoreapp2.2\shopping_entities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
