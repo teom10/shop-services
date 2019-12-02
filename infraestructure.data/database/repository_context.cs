@@ -6,44 +6,26 @@ using domain.entities;
 using Microsoft.EntityFrameworkCore.Storage;
 using infraestructure.data.interfaces;
 
+
 namespace infraestructure.data.database
 {
-    public class repository_context : DbContext, IDataContext
+    public class repository_context : DbContext
     {
         public repository_context(DbContextOptions<repository_context> options)
         : base(options)
         {
         }
 
-        public DbSet<products> Products { get; set; }
-        public DbSet<category> Category { get; set; }
-        public DbSet<sale> Sales { get; set; }
-        public DbSet<sale_detail> SaleDetails { get; set; }
+        public DbSet<products> products { get; set; }
+        public DbSet<category> category { get; set; }
+        public DbSet<sale> sale { get; set; }
+        public DbSet<sale_detail> sale_detail { get; set; }
 
-
-        private IDbContextTransaction _transaction;
-
-        public void BeginTransaction()
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            _transaction = Database.BeginTransaction();
-        }
+            var config = modelBuilder.Entity<products>();
 
-        public void Commit()
-        {
-            try
-            {
-                SaveChanges();
-                _transaction.Commit();
-            }
-            finally
-            {
-                _transaction.Dispose();
-            }
-        }
-        public void Rollback()
-        {
-            _transaction.Rollback();
-            _transaction.Dispose();
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

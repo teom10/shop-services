@@ -8,6 +8,9 @@
     <Reference Include="domain.entities">
       <HintPath>..\domain.entities\bin\Debug\netcoreapp2.2\domain.entities.dll</HintPath>
     </Reference>
+    <Reference Include="infraestructure.data">
+      <HintPath>..\infraestructure.data\bin\Debug\netcoreapp2.2\infraestructure.data.dll</HintPath>
+    </Reference>
     <Reference Include="infraestructure.interfaces">
       <HintPath>..\infraestructure.interfaces\bin\Debug\netcoreapp2.2\infraestructure.interfaces.dll</HintPath>
     </Reference>

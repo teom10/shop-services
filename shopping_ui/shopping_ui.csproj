@@ -3,28 +3,28 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <UserSecretsId>67c593cc-3278-4365-a2c4-50aff471e35c</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.7.9" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
+    <PackageReference Include="Serilog" Version="2.9.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\domain.entities\domain.entities.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <Reference Include="domain.entities">
+      <HintPath>..\domain.entities\bin\Debug\netcoreapp2.2\domain.entities.dll</HintPath>
+    </Reference>
     <Reference Include="infraestructure.data">
       <HintPath>..\infraestructure.data\bin\Debug\netcoreapp2.2\infraestructure.data.dll</HintPath>
     </Reference>
     <Reference Include="infraestructure.interfaces">
-      <HintPath>..\infraestructure.data\bin\Debug\netcoreapp2.2\infraestructure.interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="services.class">
-      <HintPath>..\services.class\bin\Debug\netcoreapp2.2\services.class.dll</HintPath>
+      <HintPath>..\infraestructure.interfaces\bin\Debug\netcoreapp2.2\infraestructure.interfaces.dll</HintPath>
     </Reference>
     <Reference Include="services.classes">
       <HintPath>..\services.class\bin\Debug\netcoreapp2.2\services.classes.dll</HintPath>

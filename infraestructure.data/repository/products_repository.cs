@@ -1,4 +1,5 @@
 ﻿using domain.entities;
+using infraestructure.data.database;
 using infraestructure.data.interfaces;
 using System;
 using System.Collections.Generic;
@@ -7,42 +8,12 @@ using System.Text;
 
 namespace infraestructure.data.repository
 {
-    public class products_repository : Iproducts_repository
+    public class products_repository : repository<products>, Iproducts_repository
     {
-        private readonly IDataContext _context;
-        public products_repository(IDataContext context)
-        {
-            _context = context;
-        }
 
-        public void Delete(products entity)
+        public products_repository(repository_context context) : base(context)
         {
-            throw new NotImplementedException();
-        }
 
-        public products Get(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Insert(products entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IList<products> List()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IList<products> List(Expression<Func<products, bool>> expression)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(products entity)
-        {
-            throw new NotImplementedException();
         }
     }
 }
