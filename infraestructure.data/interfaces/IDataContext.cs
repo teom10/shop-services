@@ -8,14 +8,9 @@ namespace infraestructure.data.interfaces
 {
     public interface IDataContext
     {
-         DbSet<products> Products { get; set; }
-         DbSet<category> Category { get; set; }
-         DbSet<sale> Sales { get; set; }
-         DbSet<sale_detail> SaleDetails { get; set; }
-
-
-        void BeginTransaction();
-        void Commit();
-        void Rollback();
+         DbSet<products> products { get; set; }
+         DbSet<category> category { get; set; }
+         DbSet<sale> sale { get; set; }
+         DbSet<sale_detail> sale_detail { get; set; }
     }
 }

@@ -7,6 +7,5 @@ namespace infraestructure.interfaces
     public interface Iunit_of_work
     {
         void Commit();
-        void Rollback();
     }
 }

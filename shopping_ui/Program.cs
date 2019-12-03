@@ -8,25 +8,17 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace rest_application
+namespace shopping_ui
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            try
-            {
-                CreateWebHostBuilder(args).Build().Run();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
+            CreateWebHostBuilder(args).Build().Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-         WebHost.CreateDefaultBuilder(args)
-             .UseStartup<Startup>();
+            WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>();
     }
 }

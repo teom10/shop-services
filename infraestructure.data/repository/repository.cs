@@ -7,43 +7,53 @@ using Microsoft.EntityFrameworkCore;
 using infraestructure.data.database;
 using System.Linq;
 using System.Linq.Expressions;
+using infraestructure.data.interfaces;
 
 namespace infraestructure.data.repository
 {
     public abstract class repository<T> : Irepository<T> where T : class
     {
-        private readonly repository_context _dataContext;
+        protected repository_context _dataContext { get; set; }
+        private DbSet<T> _dbSet;
 
-        public repository(repository_context dataContext)
+        public repository(repository_context datacontext)
         {
-            _dataContext = dataContext;
+            _dataContext = datacontext;
+            _dbSet = datacontext.Set<T>();
         }
-
         public void Delete(T entity)
         {
-            _dataContext.Set<T>().Remove(entity);
+            _dbSet.Remove(entity);
             _dataContext.SaveChanges();
         }
 
         public T Get(Guid id)
         {
-            return _dataContext.Set<T>().Find(id);
+            return _dbSet.Find(id);
         }
 
         public void Insert(T entity)
         {
-            _dataContext.Set<T>().Add(entity);
+            _dbSet.Add(entity);
             _dataContext.SaveChanges();
         }
 
         public IList<T> List()
         {
-            return _dataContext.Set<T>().ToList();
+            try
+            {
+                return _dbSet.ToList();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
         public IList<T> List(Expression<Func<T, bool>> expression)
         {
-            return _dataContext.Set<T>().Where(expression).ToList();
+            return _dbSet.Where(expression).ToList();
         }
 
         public void Update(T entity)
